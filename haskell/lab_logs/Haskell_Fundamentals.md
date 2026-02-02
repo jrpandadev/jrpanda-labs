@@ -20,12 +20,12 @@ Haskell is
 ## Uses of Haskell
 Here are some examples of software projects that were written in Haskell.
 
-⁃The Darcs distributed version control system
-⁃The Sigma spam-prevention tool at Facebook
-⁃The implementations of the PureScript and Elm programming languages are written in Haskell
-⁃The Pandoc tool for converting between different document formats – it’s also used to produce this course material
-⁃The PostgREST server that exposes a HTTP REST API for a PostgreSQL database
-⁃Functional consulting companies like Galois and Well-Typed have a long history of developing critical systems for clients in Haskell
+⁃The Darcs distributed version control system.
+⁃The Sigma spam-prevention tool at Facebook.
+⁃The implementations of the PureScript and Elm programming languages are written in Haskell.
+⁃The Pandoc tool for converting between different document formats – it’s also used to produce this course material.
+⁃The PostgREST server that exposes a HTTP REST API for a PostgreSQL database.
+⁃Functional consulting companies like Galois and Well-Typed have a long history of developing critical systems for clients in Haskell.
 
 ---
 
