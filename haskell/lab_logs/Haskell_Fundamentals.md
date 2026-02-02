@@ -30,7 +30,7 @@ Here are some examples of software projects that were written in Haskell.
 
 ---
 
-**Expressions and Types**
+## Expressions and Types
 An expression has a value and a type. We write an expression and its type like this: expression :: type. 
 
 ---
