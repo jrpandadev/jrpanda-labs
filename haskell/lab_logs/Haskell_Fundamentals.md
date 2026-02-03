@@ -11,8 +11,8 @@ Haskell is a **functional** programming language.It is used for describing *func
 
 **Functions**
 * A **function**
-      * Takes one or more arguments
-      * Returns a single result 
+    * Takes one or more arguments
+    * Returns a single result 
 
 Haskell is 
 
@@ -71,24 +71,25 @@ An expression has a value and a type. We write an expression and its type like t
 | `a + b`	      |         `a + b`|
 | `f a + g b`	   |        `f(a) + g(b)`|
 | `f (a + g b)`	 |       `f(a+g(b))`|
+
 **Note** :- In Haskell : f g x y same as (((f g) x )y)
 
 **Types**
 * Int - (64-bit) integer
-       * Bounded Range : minBound(-2^63) & maxBound(2^63-1)
-       * Operations : +, -, *, div, mod
+    * Bounded Range : minBound(-2^63) & maxBound(2^63-1)
+    * Operations : +, -, *, div, mod
 * Integer - unbounded integers
-       * Operations : +, -, *, div, mod
+    * Operations : +, -, *, div, mod
 * Float - floating point ("Real Numbers")
-       * Operations : +, -, *, div, mod,sqrt
+    * Operations : +, -, *, div, mod,sqrt
 * Double - floating point ("Real Numbers")
-       * Operations : +, -, *, div, mod,sqrt
+    * Operations : +, -, *, div, mod,sqrt
 * Bool - true,false
-       * Operations : &&, ||, not
+    * Operations : &&, ||, not
 * char - characters: 'a','%' etc.
-       * Operations :reverse, ++ 
+    * Operations :reverse, ++ 
 * String - strings of characters: "abcd",etc. 
-       * Operations :reverse, ++
+    * Operations :reverse, ++
 
 **Syntax of Types**
 Function types are written using the -> syntax:
@@ -135,30 +136,31 @@ main = do --later
 ## Defining Functions
 **Function Definition** 
  * A equation with a function name, argumented names, and a body.
+ ```text
  * Ex: double x = x + x
  * Ex: sqr :: Int -> Int
        sqr x = x * x
  * Ex: isordered :: Int -> Int -> Int -> Int -> Bool
        isordered x y z = (x <= y) && (y <= z)
-
+```
 **Local Definitions**
 Haskell has two different ways for creating local definitions: let...in and where.
 
 * where adds local definitions to a definition:
-
+```text
 * Ex: circleArea :: Double -> Double
       circleArea r = pi * rsquare
           where pi = 3.1415926
                 rsquare = r * r
-
+```
 * let...in is an expression:
-
+```text
 * Ex: circleArea r = let pi = 3.1415926
                          rsquare = r * r
                      in pi * rsquare
-
+```
 * Local definitions can also be functions:
-
+```text
 * circleArea r = pi * square r
     where pi = 3.1415926
           square x = x * x
@@ -169,6 +171,7 @@ Haskell has two different ways for creating local definitions: let...in and wher
 
 * Ex: increment x = let x = x+1
                     in x
+```                    
 * This is just an infinite loop, because it tries to define a new variable x with the property x = x+1. Thus when evaluating x, Haskell just keeps computing 1+1+1+1+... indefinitely.
 
 * Ex: compute x = let a = x+1
@@ -233,12 +236,13 @@ xor11 :: Bool -> Bool -> Bool
 xor11 False b = b
 xor11 True b = not b
 ```
-**Note** :- Underscore "-" 
-            * don't case - argument not used in the body.
-            * It scans from top to bottom, then replaces the first definition whose input pattern matches the argument.  
+* **Note** :- Underscore "-" 
+      * don't case - argument not used in the body.
+      * It scans from top to bottom, then replaces the first definition whose input pattern matches the argument.  
 
 **Examples of Pattern Matching**
-* Ex.```text
+```text
+* Ex.
  greet :: String -> String -> String
  greet "Finland" name = "Hei, " ++ name
  greet "Italy"   name = "Ciao, " ++ name
@@ -246,7 +250,8 @@ xor11 True b = not b
  greet _         name = "Hello, " ++ name
 
 *Ex. <brokenGreet _         name = "Hello, " ++ name
-     brokenGreet "Finland" name = "Hei, " ++ name> ```
+     brokenGreet "Finland" name = "Hei, " ++ name>
+```
 
 * Here the first case gets selected for all inputs.
 * GHC even gives you a warning about this code:
@@ -257,12 +262,13 @@ xor11 True b = not b
     ```
 
 * First let’s introduce the standard library function *show* that can turn (almost!) anything into a string:
-
+```text
 * ghci> show True
   "True"
 * ghci> show 3
   "3"
-  ```text
+```
+```text
 * Ex: describe :: Integer -> String
       *describe 0 = "zero"
       describe 1 = "one"
