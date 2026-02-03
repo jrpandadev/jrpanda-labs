@@ -144,7 +144,7 @@ main = do --later
        isordered x y z = (x <= y) && (y <= z)
 ```
 **Local Definitions**
-Haskell has two different ways for creating local definitions: let...in and where.
+* Haskell has two different ways for creating local definitions: let...in and where.
 
 * where adds local definitions to a definition:
 ```text
@@ -167,7 +167,7 @@ Haskell has two different ways for creating local definitions: let...in and wher
 
 * circleArea r = let pi = 3.1415926
                    square x = x * x
-               in pi * square r
+                 in pi * square r
 
 * Ex: increment x = let x = x+1
                     in x
@@ -208,7 +208,7 @@ xor6 :: Bool -> Bool -> Bool
 xor6 b1 b2 = (/=)
 ```
 * **Pattern Matching** :
-A definition (of a function) can consist of multiple equations. The equations are matched in order against the arguments until a suitable one is found. This is called pattern matching.
+* A definition (of a function) can consist of multiple equations. The equations are matched in order against the arguments until a suitable one is found. This is called pattern matching.
 
 ```haskell
 xor7 :: Bool -> Bool -> Bool
