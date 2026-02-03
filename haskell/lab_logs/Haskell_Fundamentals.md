@@ -63,7 +63,7 @@ An expression has a value and a type. We write an expression and its type like t
 |**Haskell**  |   	**Python, Java or C**|
 | :---        |         :---|
 | `f 1`	       |        `f(1)`|
-| `f 1 2`	        |       f`(1,2)`|
+| `f 1 2`	        |       `f(1,2)`|
 | `g h f 1`	     |      `g(h,f,1)`|
 | `g h (f 1)`	      |     `g(h,f(1))`|
 | `g (h f 1)`	      |     `g(h(f,1))`|
