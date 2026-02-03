@@ -58,19 +58,19 @@ A brief timeline of Haskell:
 An expression has a value and a type. We write an expression and its type like this: expression :: type. 
 
 **Syntax of Expressions**
-Expressions consist of functions applied to arguments. Functions are applied (i.e. called) by placing the arguments after the name of the function – there is no special syntax for a function call.
+* Expressions consist of functions applied to arguments. Functions are applied (i.e. called) by placing the arguments after the name of the function – there is no special syntax for a function call.
 
-**Haskell**     	**Python, Java or C**
-* f 1	               f(1)
-* f 1 2	               f(1,2)
-* g h f 1	           g(h,f,1)
-* g h (f 1)	           g(h,f(1))
-* g (h f 1)	           g(h(f,1))
-* g (h (f 1))	       g(h(f(1)))
-* a + b	               a + b
-* f a + g b	           f(a) + g(b)
-* f (a + g b)	       f(a+g(b))
-
+|**Haskell**  |   	**Python, Java or C**|
+| :---        |         :---|
+| `f 1`	       |        `f(1)`|
+| `f 1 2`	        |       f`(1,2)`|
+| `g h f 1`	     |      `g(h,f,1)`|
+| `g h (f 1)`	      |     `g(h,f(1))`|
+| `g (h f 1)`	      |     `g(h(f,1))`|
+| `g (h (f 1))`|	        `g(h(f(1)))`|
+| `a + b`	      |         `a + b`|
+| `f a + g b`	   |        `f(a) + g(b)`|
+| `f (a + g b)`	 |       `f(a+g(b))`|
 **Note** :- In Haskell : f g x y same as (((f g) x )y)
 
 **Types**
@@ -78,17 +78,17 @@ Expressions consist of functions applied to arguments. Functions are applied (i.
        * Bounded Range : minBound(-2^63) & maxBound(2^63-1)
        * Operations : +, -, *, div, mod
 * Integer - unbounded integers
-            * Operations : +, -, *, div, mod
+       * Operations : +, -, *, div, mod
 * Float - floating point ("Real Numbers")
-          * Operations : +, -, *, div, mod,sqrt
+       * Operations : +, -, *, div, mod,sqrt
 * Double - floating point ("Real Numbers")
-           * Operations : +, -, *, div, mod,sqrt
+       * Operations : +, -, *, div, mod,sqrt
 * Bool - true,false
-         * Operations : &&, ||, not
+       * Operations : &&, ||, not
 * char - characters: 'a','%' etc.
-         * Operations :reverse, ++ 
+       * Operations :reverse, ++ 
 * String - strings of characters: "abcd",etc. 
-           * Operations :reverse, ++
+       * Operations :reverse, ++
 
 **Syntax of Types**
 Function types are written using the -> syntax:
@@ -237,21 +237,24 @@ xor11 True b = not b
             * don't case - argument not used in the body.
             * It scans from top to bottom, then replaces the first definition whose input pattern matches the argument.  
 
-**Examples of Pattern matching**
-* Ex. greet :: String -> String -> String
-      greet "Finland" name = "Hei, " ++ name
-      greet "Italy"   name = "Ciao, " ++ name
-      greet "England" name = "How do you do, " ++ name
-      greet _         name = "Hello, " ++ name
+**Examples of Pattern Matching**
+* Ex.```text
+ greet :: String -> String -> String
+ greet "Finland" name = "Hei, " ++ name
+ greet "Italy"   name = "Ciao, " ++ name
+ greet "England" name = "How do you do, " ++ name
+ greet _         name = "Hello, " ++ name
 
-Ex. brokenGreet _         name = "Hello, " ++ name
-    brokenGreet "Finland" name = "Hei, " ++ name
+*Ex. <brokenGreet _         name = "Hello, " ++ name
+     brokenGreet "Finland" name = "Hei, " ++ name> ```
 
 * Here the first case gets selected for all inputs.
 * GHC even gives you a warning about this code:
 
-<interactive>:1:1: warning: [-Woverlapping-patterns]
-    Pattern match is redundant
+```text
+ *<interactive>:1:1: warning: [-Woverlapping-patterns]
+    Pattern match is redundant 
+    ```
 
 * First let’s introduce the standard library function *show* that can turn (almost!) anything into a string:
 
@@ -259,21 +262,22 @@ Ex. brokenGreet _         name = "Hello, " ++ name
   "True"
 * ghci> show 3
   "3"
+  ```text
 * Ex: describe :: Integer -> String
-      describe 0 = "zero"
+      *describe 0 = "zero"
       describe 1 = "one"
       describe 2 = "an even prime"
       describe n = "the number " ++ show n
-
+```
 * **Guards** :
 * The if then else is often a bit cumbersome, especially when you have multiple cases. An easier alternative is Haskell’s conditional definition or guarded definition.
-
+```text
 * Syntax:
   f x y z
     | condition1 = something
     | condition2 = other
     | otherwise  = somethingother
-
+```
 ```haskell
 xor12 :: Bool -> Bool -> Bool
 xor12 False b = b
