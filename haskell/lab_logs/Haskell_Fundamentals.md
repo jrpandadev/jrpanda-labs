@@ -100,9 +100,10 @@ Function types are written using the -> syntax:
 
 **Note**
 * To find type press either :type or :t in ghci
-* ghci>:t 1+1
-  1+1 :: Num a -> a (here a : any number type)
-
+```text
+ghci>:t 1+1
+1+1 :: Num a -> a (here a : any number type)
+```
 ---
 
 ## The Structure of a Haskell Program
@@ -147,39 +148,40 @@ main = do --later
 * Haskell has two different ways for creating local definitions: let...in and where.
 
 * where adds local definitions to a definition:
-```text
-* Ex: circleArea :: Double -> Double
+```haskell {-
+Ex:-} circleArea :: Double -> Double
       circleArea r = pi * rsquare
           where pi = 3.1415926
                 rsquare = r * r
 ```
 * let...in is an expression:
-```text
-* Ex: circleArea r = let pi = 3.1415926
-                         rsquare = r * r
-                     in pi * rsquare
+```haskell 
+--Ex: 
+circleArea r = let pi = 3.1415926
+                   rsquare = r * r
+               in pi * rsquare
 ```
 * Local definitions can also be functions:
-```text
-* circleArea r = pi * square r
+```haskell
+ circleArea r = pi * square r
     where pi = 3.1415926
           square x = x * x
 
-* circleArea r = let pi = 3.1415926
+ circleArea r = let pi = 3.1415926
                    square x = x * x
                  in pi * square r
-
-* Ex: increment x = let x = x+1
+{-
+Ex:-} increment x = let x = x+1
                     in x
 ```                    
 * This is just an infinite loop, because it tries to define a new variable x with the property x = x+1. Thus when evaluating x, Haskell just keeps computing 1+1+1+1+... indefinitely.
-
+```text
 * Ex: compute x = let a = x+1
                       a = a*2
                   in a
 * error:
     Conflicting definitions for ‘a’
- 
+``` 
 * **Remark** : local definitions can shadow the names of variables defined elsewhere. Shadowing is not a side-effect. Instead, shadowing creates a new variable within a more restricted scope that uses the same name as some variable in the outer scope.  
 
 **XOR (Exclusive Or)**
@@ -259,18 +261,18 @@ xor11 True b = not b
 ```text
  *<interactive>:1:1: warning: [-Woverlapping-patterns]
     Pattern match is redundant 
-    ```
+```
 
 * First let’s introduce the standard library function *show* that can turn (almost!) anything into a string:
-```text
-* ghci> show True
+```haskell
+ghci> show True
   "True"
-* ghci> show 3
+ghci> show 3
   "3"
 ```
-```text
-* Ex: describe :: Integer -> String
-      *describe 0 = "zero"
+```haskell {-
+Ex:-} describe :: Integer -> String
+      describe 0 = "zero"
       describe 1 = "one"
       describe 2 = "an even prime"
       describe n = "the number " ++ show n
