@@ -41,15 +41,15 @@ A brief timeline of Haskell:
 
  * 1930s: Lambda Calculus
  * 1950s-1970s: Lisp, Pattern Matching, Scheme, ML
- * 1978 John Backus: Can programming be liberated from the von Neumann style?
- * 1987 A decision was made to unify the field of pure functional languages
- * 1990 Haskell 1.0
+ * 1978: John Backus: Can programming be liberated from the von Neumann style?
+ * 1987: A decision was made to unify the field of pure functional languages
+ * 1990: Haskell 1.0
  * 1991 Haskell 1.1 (let-syntax, sections)
- * 1992 Haskell 1.2, GHC
- * 1996 Haskell 1.3 (Monads, do-syntax, type system improvements)
- * 1999 Haskell 98
+ * 1992: Haskell 1.2, GHC
+ * 1996: Haskell 1.3 (Monads, do-syntax, type system improvements)
+ * 1999: Haskell 98
  * 2000’s: GHC development, many extensions to the language
- * 2009 The Haskell 2010 standard
+ * 2009: The Haskell 2010 standard
  * 2010’s: GHC development, Haskell Platform, Haskell Stack
 
  ---
@@ -100,7 +100,7 @@ Function types are written using the -> syntax:
 
 **Note**
 * To find type press either :type or :t in ghci
-```text
+```haskell
 ghci>:t 1+1
 1+1 :: Num a -> a (here a : any number type)
 ```
@@ -148,11 +148,12 @@ main = do --later
 * Haskell has two different ways for creating local definitions: let...in and where.
 
 * where adds local definitions to a definition:
-```haskell {-
-Ex:-} circleArea :: Double -> Double
-      circleArea r = pi * rsquare
-          where pi = 3.1415926
-                rsquare = r * r
+```haskell   
+--Ex:                    
+circleArea :: Double -> Double
+circleArea r = pi * rsquare
+    where pi = 3.1415926
+          rsquare = r * r
 ```
 * let...in is an expression:
 ```haskell 
@@ -243,23 +244,24 @@ xor11 True b = not b
       * It scans from top to bottom, then replaces the first definition whose input pattern matches the argument.  
 
 **Examples of Pattern Matching**
-```text
-* Ex.
+```haskell
+--Ex.
  greet :: String -> String -> String
  greet "Finland" name = "Hei, " ++ name
  greet "Italy"   name = "Ciao, " ++ name
  greet "England" name = "How do you do, " ++ name
  greet _         name = "Hello, " ++ name
 
-*Ex. <brokenGreet _         name = "Hello, " ++ name
-     brokenGreet "Finland" name = "Hei, " ++ name>
+--Ex. 
+brokenGreet _         name = "Hello, " ++ name
+brokenGreet "Finland" name = "Hei, " ++ name
 ```
 
 * Here the first case gets selected for all inputs.
 * GHC even gives you a warning about this code:
 
 ```text
- *<interactive>:1:1: warning: [-Woverlapping-patterns]
+ <interactive>:1:1: warning: [-Woverlapping-patterns]
     Pattern match is redundant 
 ```
 
@@ -270,12 +272,13 @@ ghci> show True
 ghci> show 3
   "3"
 ```
-```haskell {-
-Ex:-} describe :: Integer -> String
-      describe 0 = "zero"
-      describe 1 = "one"
-      describe 2 = "an even prime"
-      describe n = "the number " ++ show n
+```haskell 
+--Ex: 
+describe :: Integer -> String
+describe 0 = "zero"
+describe 1 = "one"
+describe 2 = "an even prime"
+describe n = "the number " ++ show n
 ```
 * **Guards** :
 * The if then else is often a bit cumbersome, especially when you have multiple cases. An easier alternative is Haskell’s conditional definition or guarded definition.
