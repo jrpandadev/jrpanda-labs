@@ -330,6 +330,55 @@ xor17 b1 b2 + case b1 of
    | b1 == b2 = False
    | b1 /= b2 = True
 ```
+---
+
+## Sectioning 
+* An operator can be turned into  a function by surrounding it with ( ) & placed before argument.
+* Ex: 5/5=1 can be written as div 5 5 = 1 or (/) 5 5 = 1
+* Special Syntax : (n+)
+* Expression like (n+) & (+n) are called *sections*.
+```text
+* Ex: (*8) 3 = 24   
+      (/8) 3 = 0.375
+      (8/) 3 = 2.666666
+      (8-) 3 = 5
+      (-8) 3 doesn't work instead use substract
+      (substract 8) 3 = -5
+```
+
+---
+
+## Recursion 
+* **Base Case** : f(0) is given
+* **Inductive Step** : for n>0, f(n) is defined in terms of smaller functions : f(n-1),f(n-2),....,f(0)
+
+* Example:
+```haskell
+factorial :: Int -> Int
+factorial n = if n == 0 then 1 else n*factorial (n-1)
+--or
+factorial :: Int -> Int
+factorial 0 = 1
+factorial n = n * factorial (n-1)
+--or
+factorial :: Int -> Int
+factorial n = case n of 
+     | 0 -> 1
+     | _ -> n*factorial(n-1)
+
+--no guarantee of termination
+--factorial(-2) shows Exception: Negative Input
+
+--Better version
+
+factorial :: Integer -> Integer
+factorial 0 = 1
+factorial n 
+     | n > 0 = n * factorial (n-1)
+     | otherwise = error "works only for non-negative inputs"
+```
+* **Note** : There is no built in natural number in haskell.
+  * error :: string -> Integer
 
 ⁃
 ⁃
