@@ -8,6 +8,7 @@
 * **Variable** : It is the name of the memory location which stores some data.
 * **Expressions** : It is the combination of values, variables, operators, functions.
 * **Keywords** : Reserved words that has special meaning to the compiler.There are 32 keywords in C.
+|:---|:---|:---|:---|:---|:---|:---|:---|
 |`auto`|`continue`|`double`|`for`|`int`|`signed`|`struct`|`void`|
 |`break`|`do`|`else`|`if`|`long`|`static`|`switch`|`while`|
 |`case`|`default`|`enum`|`goto`|`register`|`sizeof`|`typedef`|`volatile`|
@@ -83,12 +84,13 @@ int main (void)
 > scanf("format_string", &variable);
 
 * **Note**
-> All c programs start by executing from first statement of the main function.
-> Just as main() is a function, printf is a library function from the standard input-output library, which is why we inserted the statement #include<stdio.h>.
-> There are 256 characters in C.
-> 'A'-'Z' == 65 - 90
-> 'a' - 'z' == 97 - 122
-> '0' - '9' == 48 - 57
+* All c programs start by executing from first statement of the main function.
+* Just as main() is a function, printf is a library function from the standard input-output library, which is why we inserted the statement #include<stdio.h>.
+* There are 256 characters in C.
+* 'A'-'Z' == 65 - 90
+* 'a' - 'z' == 97 - 122
+* '0' - '9' == 48 - 57
+|:---|:---|
 |`%4.0f`|`4 character wide with no decimal digit`|
 |`%4.1f`|`4 character wide with 1 decimal digit`|
 |`%0.6f`|`request 6 decimal digit`|
@@ -109,17 +111,18 @@ int main (void)
 ## Operators
 * **Arithmetic** : +,-,*,/,%,^
 * **Boolean** : True or False
-*   |
-*   |-> **logical**---> And(&&)
-*   |                |-> Or(||)
-*   |                |-> Not(!)
-*   |
-*   |-> **Relational**---> >,<,>=,<=,==,!=
-
+'   |
+    |-> **logical**---> And(&&)
+    |                |-> Or(||)
+    |                |-> Not(!)
+    |
+    |-> **Relational**---> >,<,>=,<=,==,!=
+'
 * **Precedence Order**
 * Top {high} ---> Bottom{low}
 |**Operator class**|**Operator type**|**Operator**|**Associativity**|
-||`Parenthesis`|`{},[],()->,.`|`Left to Right`|
+|:---|:---|:---|:---|
+|`Parenthesis`|`{},[],()->,.`|`Left to Right`|
 |`Unary`|`Boolean Not, unary -, ~ ,++, --`|`!,-`|`Right to Left`|
 |`Arithmetic`|`Multiply,divide,remainder`|`*,/,%`|`Left to Right`|
 |` `|`Add,Substract(binary)`|`+,-`|`Left to Right`|
@@ -137,7 +140,7 @@ int main (void)
 
 ## Conditionals
 * It allows your program to make decisions.
-* 1. *if / if-else / if-elseif-else*
+1. *if / if-else / if-elseif-else*
 *  Syntax: 
 ```text
 if(condition)
@@ -206,7 +209,7 @@ main()
          printf("Digit \n");  
 }
 ```
-* 2.*Switch*
+2. *Switch*
 * C's switch() statement is a conditional statement that permits enumeration of discrete cases, instead of replying on Boolean expression.
 * It is important to break between each case or you will "fall through" each case (unless that is desired behaviour)
 Example :
@@ -224,11 +227,19 @@ switch (x)
 }
 ```
 * break is used to stop the iteration. If break is not used all cases from the case where condition is valid, will be executed(In this case, if x=1 and break is not there,it will print all cases ) 
-
+|:---|:---|
 |**if/if-else/if-elseif-if**|**switch**|
 |`use boolean expression to make decision` |`use discrete case to make decision`|
 
-* 3. *Ternary operator*
+3. *Ternary operator*
 * Syntax: (condition)? statement : statement
 Example : int x = (x==0) ? 5 : 6 
 
+## Symbolic Constant 
+* C provides a preprocessor directive <also called a macro> for creating symbolic constant.
+* Syntax:
+```text
+#define NAME REPLACEMENT
+```
+* At the time program is compiled, #define goes through the code and replace the name with replacement.
+* If #include is similar to copy/paste then #define is analog to find/replace.
