@@ -8,11 +8,13 @@
 * **Variable** : It is the name of the memory location which stores some data.
 * **Expressions** : It is the combination of values, variables, operators, functions.
 * **Keywords** : Reserved words that has special meaning to the compiler.There are 32 keywords in C.
+
 |:---|:---|:---|:---|:---|:---|:---|:---|
 |`auto`|`continue`|`double`|`for`|`int`|`signed`|`struct`|`void`|
 |`break`|`do`|`else`|`if`|`long`|`static`|`switch`|`while`|
 |`case`|`default`|`enum`|`goto`|`register`|`sizeof`|`typedef`|`volatile`|
 |`char`|`const`|`extern`|`float`|`return`|`short`|`union`|`unsigned`|
+
 * **Compilation** : A computer program that translates C code into machine code.
 ```c
 //compilation code
@@ -32,8 +34,8 @@ gcc .\a
   * Range: -128 - 127
   * **Signed Char** : 1 byte
   * **Unsigned Char** : 1 byte
-  *     |---> Unsigned :- it is a qualifier, which effectively doubles the range of that type at a cost of diswallowing any negative value.
-  *     |--->Range : 0 - 255
+  *     ---> Unsigned :- it is a qualifier, which effectively doubles the range of that type at a cost of diswallowing any negative value.
+  *     --->Range : 0 - 255
 * **int** :- It is a datatype used for variables that will store integers.
   * Range: -2^31 - (2^31)-1
   * **Signed int** : 2 byte
@@ -90,6 +92,7 @@ int main (void)
 * 'A'-'Z' == 65 - 90
 * 'a' - 'z' == 97 - 122
 * '0' - '9' == 48 - 57
+
 |:---|:---|
 |`%4.0f`|`4 character wide with no decimal digit`|
 |`%4.1f`|`4 character wide with 1 decimal digit`|
@@ -103,6 +106,7 @@ int main (void)
 |`%f`|`float`|
 |`lf`|`long  float or double`|
 |`%p`|`pointers`|
+
 * char c = A;
 * printf("%d",c); ::output: 65
 
@@ -111,15 +115,16 @@ int main (void)
 ## Operators
 * **Arithmetic** : +,-,*,/,%,^
 * **Boolean** : True or False
-'   |
-    |-> **logical**---> And(&&)
-    |                |-> Or(||)
-    |                |-> Not(!)
-    |
-    |-> **Relational**---> >,<,>=,<=,==,!=
-'
+|
+|-> **logical**---> And(&&)
+|                |-> Or(||)
+|                |-> Not(!)
+|
+|-> **Relational**---> >,<,>=,<=,==,!=
+
 * **Precedence Order**
 * Top {high} ---> Bottom{low}
+
 |**Operator class**|**Operator type**|**Operator**|**Associativity**|
 |:---|:---|:---|:---|
 |`Parenthesis`|`{},[],()->,.`|`Left to Right`|
@@ -226,7 +231,8 @@ switch (x)
     default: printf("Sorry! \n");
 }
 ```
-* break is used to stop the iteration. If break is not used all cases from the case where condition is valid, will be executed(In this case, if x=1 and break is not there,it will print all cases ) 
+* break is used to stop the iteration. If break is not used all cases from the case where condition is valid, will be executed(In this case, if x=1 and break is not there,it will print all cases )
+
 |:---|:---|
 |**if/if-else/if-elseif-if**|**switch**|
 |`use boolean expression to make decision` |`use discrete case to make decision`|
