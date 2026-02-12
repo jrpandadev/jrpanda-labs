@@ -117,12 +117,11 @@ int main (void)
 ## Operators
 * **Arithmetic** : +,-,*,/,%,^
 * **Boolean** : True or False
-|
-|-> **logical**---> And(&&)
-|                |-> Or(||)
-|                |-> Not(!)
-|
-|-> **Relational**---> >,<,>=,<=,==,!=
+    * **logical**: And(&&)
+           * Or(||)
+           * Not(!)
+
+    * **Relational**: >,<,>=,<=,==,!=
 
 * **Precedence Order**
 * Top {high} ---> Bottom{low}
@@ -235,9 +234,8 @@ switch (x)
 ```
 * break is used to stop the iteration. If break is not used all cases from the case where condition is valid, will be executed(In this case, if x=1 and break is not there,it will print all cases )
 
-|||
-|:---|:---|
 |**if/if-else/if-elseif-if**|**switch**|
+|:---|:---|
 |`use boolean expression to make decision` |`use discrete case to make decision`|
 
 3. *Ternary operator*
@@ -252,3 +250,36 @@ Example : int x = (x==0) ? 5 : 6
 ```
 * At the time program is compiled, #define goes through the code and replace the name with replacement.
 * If #include is similar to copy/paste then #define is analog to find/replace.
+* Example :#define PIE 3.14
+
+## Loops
+1. *for* :
+* Syntax :
+```text 
+for ( initialisation ; condition ; increment)
+{    
+    statement
+}
+```
+* Example : for (int i; i<=10; i++){---code---}
+
+2. *while* :
+* Syntax :
+```text
+while (condition)
+{
+    statement
+}
+```
+
+3. *do-while* :
+* Syntax :
+```text
+do{
+    statement
+}while(condition)
+```
+
+|**while**|**do-while**|**for**|
+|:---|:---|:---|
+|`Use when you want a loop to repeat an unknown number of times and possibly not at all.` |`Use when you want a loop to repeat an unknown number of times but atleast once`|`Use when you want a loop to repeat an discrete number of times, though you may not know the number of times of compilation`|
