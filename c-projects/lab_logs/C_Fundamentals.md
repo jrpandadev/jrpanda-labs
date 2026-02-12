@@ -9,6 +9,7 @@
 * **Expressions** : It is the combination of values, variables, operators, functions.
 * **Keywords** : Reserved words that has special meaning to the compiler.There are 32 keywords in C.
 
+|||||||||
 |:---|:---|:---|:---|:---|:---|:---|:---|
 |`auto`|`continue`|`double`|`for`|`int`|`signed`|`struct`|`void`|
 |`break`|`do`|`else`|`if`|`long`|`static`|`switch`|`while`|
@@ -93,6 +94,7 @@ int main (void)
 * 'a' - 'z' == 97 - 122
 * '0' - '9' == 48 - 57
 
+|||
 |:---|:---|
 |`%4.0f`|`4 character wide with no decimal digit`|
 |`%4.1f`|`4 character wide with 1 decimal digit`|
@@ -127,12 +129,12 @@ int main (void)
 
 |**Operator class**|**Operator type**|**Operator**|**Associativity**|
 |:---|:---|:---|:---|
-|`Parenthesis`|`{},[],()->,.`|`Left to Right`|
+||`Parenthesis`|`{},[],()->,.`|`Left to Right`|
 |`Unary`|`Boolean Not, unary -, ~ ,++, --`|`!,-`|`Right to Left`|
 |`Arithmetic`|`Multiply,divide,remainder`|`*,/,%`|`Left to Right`|
-|` `|`Add,Substract(binary)`|`+,-`|`Left to Right`|
+||`Add,Substract(binary)`|`+,-`|`Left to Right`|
 |`Comparison`|`Relational Comparison`|`<,<=,>,>=`|`Left to Right`|
-|` `|`Equality Comparison`|`==`|`Left to Right`|
+||`Equality Comparison`|`==`|`Left to Right`|
 |`Logical Operators`|`Logical AND ,Logical OR`|`&&,\|\|`|`Left to Right`|
 |`Assignment`|`Assignent`|` = `|`Right to Left`|
 |`Comma`|`comma`|`,`|`Left to Right`|
@@ -233,6 +235,7 @@ switch (x)
 ```
 * break is used to stop the iteration. If break is not used all cases from the case where condition is valid, will be executed(In this case, if x=1 and break is not there,it will print all cases )
 
+|||
 |:---|:---|
 |**if/if-else/if-elseif-if**|**switch**|
 |`use boolean expression to make decision` |`use discrete case to make decision`|
