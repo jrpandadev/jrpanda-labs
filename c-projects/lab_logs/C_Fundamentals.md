@@ -283,3 +283,119 @@ do{
 |**while**|**do-while**|**for**|
 |:---|:---|:---|
 |`Use when you want a loop to repeat an unknown number of times and possibly not at all.` |`Use when you want a loop to repeat an unknown number of times but atleast once`|`Use when you want a loop to repeat an discrete number of times, though you may not know the number of times of compilation`|
+
+* **Iteration**: Each run of thr loop is called Iteration.
+* **Loop invariant**: A propperty relating values of variables that holds at the beginning of each iteration of loop.
+* ****
+
+---
+
+## Practice-Problems
+
+1. Read two numbers and show their GCD as output.
+
+```c
+#include <stdio.h>
+int main(void)
+{
+    int a,b,t;
+    scanf("%d%d",&a,&b);
+    if (a<b)
+    {
+        t=a;
+        a=b;
+        b=t;
+    }
+    while (b != 0)
+    {
+        t = a;
+        a = b;
+        b = t % b;
+    }
+    printf("GCD : %d\n",a);
+}
+```
+2. Read a sequence of numbers until a -1 . Output the length of the longest contiguous increasing sub-sequence.
+```c
+#include <stdio.h>
+int main (void)
+{
+  int prev, curr, len=0, maxlen=0;
+  scanf("%d",&prev);
+  if (prev != -1 )
+  {
+    len == 1;
+    scanf("%d",&curr);
+
+    while (curr != -1)
+    {
+        if (prev < curr)
+            len = len+1;
+        else
+        {
+            if(maxlen < len)
+               maxlen = len;
+            len = 1;
+        }
+        prev = curr;
+        scanf("%d",&curr);
+    }
+    if (maxlen < len)
+        maxlen = len;
+  } 
+  printf("length of the longest contiguous : %d",maxlen) 
+}
+
+```
+3. Print the sum of the squares of the sum of numbers in each row in a matrix of order m * n.
+```c
+#include <stdio.h>
+int main (void)
+{
+    int a,colindex,rs,rsq,rowindex=0,cs=0,m,n;
+    scanf("%d,%d",&m,&n);
+    while (rowindex < m )
+    {
+        rs = 0;
+        colindex = 0;
+        while (colindex < n)
+        {
+            scanf("%d",&a);
+            rs = rs + a;
+            colindex = colindex + 1;
+        }
+        rsq = rs*rs;
+        cs = cs + rsq;
+        rowindex = rowindex + 1;
+    }
+}
+```
+4. Show the Following Patterns:-
+```text
+i.*
+  * *
+  * * *
+  * * * *
+  * * * * *
+```
+```c
+#include <stdio.h>
+int main (void)
+{ 
+    int height;
+    do{
+        printf("Enter the height : ");
+        scanf("%d",&height);
+    }while(height < 1);
+    for (int i=1;i<=height;i++)
+    {
+        for(int j=o;j<(i+1);j++)
+        {
+          printf("#");
+        }
+    printf("\n");
+    } 
+}
+```
+
+
