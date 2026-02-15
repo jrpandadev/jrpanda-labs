@@ -298,13 +298,13 @@ do{
 #include <stdio.h>
 int main(void)
 {
-    int a,b,t;
-    scanf("%d%d",&a,&b);
-    if (a<b)
+    int a, b, t;
+    scanf("%d%d", &a, &b);
+    if (a < b)
     {
-        t=a;
-        a=b;
-        b=t;
+        t = a;
+        a = b;
+        b = t;
     }
     while (b != 0)
     {
@@ -352,8 +352,8 @@ int main (void)
 #include <stdio.h>
 int main (void)
 {
-    int a,colindex,rs,rsq,rowindex=0,cs=0,m,n;
-    scanf("%d,%d",&m,&n);
+    int a, colindex, rs, rsq, rowindex=0, cs=0, m, n;
+    scanf("%d,%d", &m, &n);
     while (rowindex < m )
     {
         rs = 0;
@@ -364,7 +364,7 @@ int main (void)
             rs = rs + a;
             colindex = colindex + 1;
         }
-        rsq = rs*rs;
+        rsq = rs * rs;
         cs = cs + rsq;
         rowindex = rowindex + 1;
     }
@@ -387,15 +387,344 @@ int main (void)
         printf("Enter the height : ");
         scanf("%d",&height);
     }while(height < 1);
-    for (int i=1;i<=height;i++)
+    for (int i = 1; i <= height; i++)
     {
-        for(int j=o;j<(i+1);j++)
+        for(int j = 1; j < (i + 1); j++)
         {
-          printf("#");
+          printf("*");
+          printf(" ");
         }
     printf("\n");
     } 
 }
 ```
+```text
+ii.       *
+        * *
+      * * *
+    * * * *
+  * * * * * 
+```
+```c
+#include <stdio.h>
+int main (void)
+{ 
+    int height;
+    do{
+        printf("Enter the height : ");
+        scanf("%d", &height);
+    }while(height < 1);
+    for (int i = 1; i <= height; i++)
+    {
+        for(int j = 1; j <= height; j++)
+        {
+            if((j + i) > height)
+            {
+                printf("*");
+                printf(" ");
+            }
+            else
+                printf("  ");
+        }
+    printf("\n");
+    } 
+}
+```
+```text
+iii.     * 
+        * * 
+       * * * 
+      * * * * 
+     * * * * * 
+```
+```c
+#include <stdio.h>
+int main (void)
+{ 
+    int height;
+    do{
+        printf("Enter the height : ");
+        scanf("%d", &height);
+    }while(height < 1);
+    for (int i=1; i <= height; i++)
+    {
+        for(int j = 1; j <= height; j++)
+        {
+            if((j + i) > height)
+            {
+                printf("*");
+                printf(" ");
+            }
+            else
+                printf(" ");
+        }
+    printf("\n");
+    } 
+}
+```
+```text
+iv.       *  *  
+        * *  * *
+      * * *  * * *
+    * * * *  * * * *
+  * * * * *  * * * * *
+```
+```c
+#include <stdio.h>
+int main (void)
+{ 
+    int height;
+    do{
+        printf("Enter the height : ");
+        scanf("%d", &height);
+    }while(height < 1);
+    for (int i = 1; i <= height; i++)
+    {
+        for(int j = 1; j <= height; j++)
+        {
+            if((j + i) > height)
+            {
+                printf("*");
+                printf(" ");
+            }
+            else
+                printf("  ");
+        }
+        printf("  ");
+        for (int l = 0; l < i; l++)
+        {
+            printf("*");
+            printf(" ");
+        }
+        
+        printf("\n");
+    } 
+}
+```
+4. Implement a program in C that checks the validity of a given credit card number.
+* **Note**:
+1. *Luhn’s Algorithm* 
+* According to Luhn’s algorithm, you can determine if a credit card number is (syntactically) valid as follows:
 
+  1. Multiply every other digit by 2, starting with the number’s second-to-last digit, and then add those products’ digits together.
+  2. Add the sum to the sum of the digits that weren’t multiplied by 2.
+  3. If the total’s last digit is 0 (or, put more formally, if the total modulo 10 is congruent to 0), the number is valid!
+* That’s kind of confusing, so let’s try an example with Jyoti’s Visa: 4003600000000014.
 
+* For the sake of discussion, let’s first underline every other digit, starting with the number’s second-to-last digit:
+
+* 4003600000000014
+
+* Okay, let’s multiply each of the underlined digits by 2:
+
+* 1•2 + 0•2 + 0•2 + 0•2 + 0•2 + 6•2 + 0•2 + 4•2
+
+* That gives us:
+
+* 2 + 0 + 0 + 0 + 0 + 12 + 0 + 8
+
+* Now let’s add those products’ digits (i.e., not the products themselves) together:
+
+* 2 + 0 + 0 + 0 + 0 + 1 + 2 + 0 + 8 = 13
+
+* Now let’s add that sum (13) to the sum of the digits that weren’t multiplied by 2 (starting from the end):
+
+* 13 + 4 + 0 + 0 + 0 + 0 + 0 + 3 + 0 = 20
+
+* Yup, the last digit in that sum (20) is a 0, so Jyoti’s card is legit!
+
+* So, validating credit card numbers isn’t hard, but it does get a bit tedious by hand. Let’s write a program.
+
+2. Actually, that’s a bit of an exaggeration, because credit card numbers actually have some structure to them. All American Express numbers start with 34 or 37; most MasterCard numbers start with 51, 52, 53, 54, or 55 (they also have some other potential starting numbers which we won’t concern ourselves with for this problem); and all Visa numbers start with 4.
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    long credit, temp;
+    int len = 0, n = 1, e = 0, f = 0;
+
+    // 1. Check input is valid using standard long
+    do
+    {
+       printf("Number: ");
+       if (scanf("%ld", &credit) != 1) return 1; // Safety check for non-numeric input
+       
+       temp = credit;
+       len = 0;
+       while (temp > 0)
+       {
+        temp = temp / 10;
+        len++;
+       }
+    }
+    while (len < 1);
+
+    // 2. Loop through digits using math instead of string indexing
+    temp = credit;
+    int first_digit, second_digit;
+
+    for (int i = 1; i <= len; i++)
+    {
+        int d = temp % 10; // Get the last digit
+        
+        if (i == len) first_digit = d;
+        if (i == len - 1) second_digit = d;
+
+        if (n % 2 == 0) // Your 'e' logic for every second digit
+        {
+            d *= 2;
+            if (d > 9)
+            {
+                e += (d / 10) + (d % 10);
+            }
+            else
+            {
+                e += d;
+            }
+        }
+        else // Your 'f' logic for other digits
+        {
+            f += d;
+        }
+        
+        temp /= 10; // Move to the next digit
+        n++;
+    }
+
+    // 3. Final Branding Logic
+    if ((e + f) % 10 != 0)
+    {
+        printf("INVALID\n");
+        return 0; 
+    }
+
+    int first_two = (first_digit * 10) + second_digit;
+
+    if ((len == 15) && (first_digit == 3) && (second_digit == 4 || second_digit == 7))
+    {
+        printf("AMEX\n");
+    }
+    else if ((len == 16) && (first_digit == 5) && (second_digit >= 1 && second_digit <= 5))
+    {
+        printf("MASTERCARD\n");
+    }
+    else if ((len == 16 || len == 13) && (first_digit == 4))
+    {
+        printf("VISA\n");
+    }
+    else
+    {
+        printf("INVALID\n");
+    }
+
+    return 0;
+}
+```
+## Character Input and Output
+1. getchar() fetches the next input character each time it is called, and returns that character as its value.
+2. putchar() is used to write a single character to the standard output.
+* Example : program which copies its input to its output one character at a time.
+```c
+#include <stdio.h>
+
+int main(void)
+{
+    int c;
+    c = getchar();
+
+    while (c != EOF) {
+        putchar(c);
+        c = getchar();
+    }
+}
+```
+* EOF will be either -1 or 0.Modern C compilers define EOF in the stdio.h include file - so you should never define EOF in your code. In modern C, the value of EOF is -1, but you should just include stdio.h and use the pre-defined EOF constant to check for end of file.
+
+* **Problems**
+1. Write a C program counts characters.
+```c
+#include <stdio.h>
+
+int main(void) /* count lines in input */
+{
+    long nc;
+    // In a newline press ctrl + z then press enter
+    nc = 0;
+    while ( getchar() != EOF)
+            ++nc;
+    printf("%ld\n", nc);
+}
+```
+2. Write a C program counts lines in its input. Input lines are assumed to be terminated by the newline character \n.
+```c
+#include <stdio.h>
+
+int main(void) /* count lines in input */
+{
+    int c, nl;
+
+    nl = 0;
+    while ((c = getchar()) != EOF)
+        if (c == '\n')
+            ++nl;
+    printf("%d\n", nl);
+}
+```
+3. The fourth in our series of useful programs counts lines, words, and characters, with the loose definition that a word is any sequence of characters that does not contain a blank, tab or newline.(This is a bare-bones version of the UNIX utility wc.)
+```c
+#include <stdio.h>
+
+#define YES 1
+#define NO  0
+
+int main(void) /* count lines, words, chars in input */
+{
+    int c, nl, nw, nc, inword;
+
+    inword = NO;
+    nl = nw = nc = 0;
+    while ((c = getchar()) != EOF) {
+        ++nc;
+        if (c == '\n' )
+            ++nl;
+        if (c == ' ' || c == '\n' || c == '\t' )
+            inword = NO;
+        else if ( inword == NO ) {
+            inword = YES;
+            ++nw;
+        }
+    }
+    printf("%d %d %d\n", nl, nw, nc);
+}
+```
+## Break
+* It is sometimes convenient to be able to control loop exits other than by testing at the top or bottom. The break statement provides an early exit from for, while, and do, just as from switch. A break statement causes the innermost enclosing loop (or switch) to be exited immediately.
+
+* Exampl : program removes trailing blanks and tabs from the end of each line of input.
+```c
+#include <stdio.h>
+#define MAXLINE 1000
+
+int main(void) /* remove trailing blanks and tabs */
+{
+  int n;
+  char line[MAXLINE];
+
+  while ((n = getline(line, MAXLINE)) > 0) {
+    while (--n >= 0)
+      if (line[n] != ' ' && line[n] != '\t'
+        && line[n] != '\n')
+          break;
+    line[n+1] = '\0';
+    printf("%s\n", line);
+  }
+}
+```
+## Continue
+* The continue statement is related to break, but less often used; it causes the next iteration of the enclosing loop (for, while, do) to begin. In the while and do, this means that the test part is executed immediately; in the for, control passes to the re-initialization step. (continue applies only to loops, not to switch. A continue inside a switch inside a loop causes the next loop iteration.)
+
+## Goto's and Labels
+* C provides the infinitely-abusable goto statement, and labels to branch to. Formally, the goto is never necessary, and in practice it is almost always easy to write code without it. We have not used goto in this book.
+* Nonetheless, we will suggest a few situations where goto's may find a place. The most common use is to abandon processing in some deeply nested structure, such as breaking out of two loops at once. The break statement cannot be used directly since it leaves only the innermost loop.
+---
