@@ -86,7 +86,7 @@ int main (void)
 * *The Basic Syntax*
 > scanf("format_string", &variable);
 
-* **Note**
+* **Note**:
 * All c programs start by executing from first statement of the main function.
 * The initial void means that the function does not return any values. The (void) means that no values are being provided to the function.
 * Just as main() is a function, printf is a library function from the standard input-output library, which is why we inserted the statement #include<stdio.h>.
@@ -119,8 +119,8 @@ int main (void)
 * **Arithmetic** : +,-,*,/,%,^
 * **Boolean** : True or False
     * **logical**: And(&&)
-           * Or(||)
-           * Not(!)
+        * Or(||)
+        * Not(!)
 
     * **Relational**: >,<,>=,<=,==,!=
 
@@ -163,7 +163,7 @@ else
          < code >
      }     
 ```
-* WAP to convert Fahrenheit to Celsius
+* WAP to convert Fahrenheit to Celsius.
 ```c
 #include<stdio.h>
 int main(void)
@@ -175,7 +175,7 @@ int main(void)
     printf("celsius = %f",c);
 }
 ```
-* WAP to check whether given year a leap year
+* WAP to check whether given year a leap year.
 ```c
 #include<stdio.h>
 int main(void)
@@ -188,7 +188,7 @@ int main(void)
 }
 ```
 * **Snippets**:
-* *To convert lowercase to uppercase*
+* *To convert lowercase to uppercase*.
 ```text
 main()
 { 
@@ -198,7 +198,7 @@ main()
 
 }
 ```
-* *To check whether a char is uppercase*
+* *To check whether a char is uppercase*.
 ```text
 main()
 { 
@@ -207,7 +207,7 @@ main()
          printf("Uppercase \n");  
 }
 ```
-* *To check whether a char is digit*
+* *To check whether a char is digit*.
 ```text
 main()
 { 
@@ -219,7 +219,7 @@ main()
 2. *Switch*:
 * C's switch() statement is a conditional statement that permits enumeration of discrete cases, instead of replying on Boolean expression.
 * It is important to break between each case or you will "fall through" each case (unless that is desired behaviour)
-Example :
+* Example :
 ```text
 int x;
 switch (x)
@@ -233,7 +233,7 @@ switch (x)
     default: printf("Sorry! \n");
 }
 ```
-* break is used to stop the iteration. If break is not used all cases from the case where condition is valid, will be executed(In this case, if x=1 and break is not there,it will print all cases )
+* break is used to stop the iteration. If break is not used all cases from the case where condition is valid, will be executed(In this case, if x=1 and break is not there,it will print all cases ).
 
 |**if/if-else/if-elseif-if**|**switch**|
 |:---|:---|
@@ -241,7 +241,7 @@ switch (x)
 
 3. *Ternary operator*:
 * Syntax: (condition)? statement : statement
-Example : int x = (x==0) ? 5 : 6 
+* Example : int x = (x==0) ? 5 : 6 
 
 ## Symbolic Constant 
 * C provides a preprocessor directive <also called a macro> for creating symbolic constant.
