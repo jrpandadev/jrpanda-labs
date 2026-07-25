@@ -12,7 +12,7 @@ A curated collection of structured Python study notes covering core concepts, al
 | **02** | [2. Strings, Input & Output, and Branching](2.%20Strings,%20InputOutput,%20and%20Branching.md) | String immutability, Slicing & Indexing, User Input, Newton's Method intro, Conditionals, Match-Case |
 | **03** | [3. Iteration](3.%20Iteration.md) | `while` & `for` loops, `range()`, `break`/`continue`, Dream House Savings problem sets |
 | **04** | [4. Approximation & Bisection Search](4.%20Approximation%20%26%20Bisection%20Search.md) | Floating-point precision, Exhaustive Approximation, Bisection Search ($O(\log_2 N)$), Newton-Raphson method |
-| **05** | [5. Decomposition, Abstraction, and Functions](5.%20Decomposition,%20Abstraction,%20and%20Functions.md) | Modularity, Functions, Docstrings, Built-in functions, Variable Scope & Environments |
+| **05** | [5. Decomposition, Abstraction, and Functions](5.%20Decomposition,%20Abstraction,%20and%20Functions.md) | Modularity, Functions & Higher-Order Functions, Lambda, Return vs Print, Hangman Game, Modules & `__name__` |
 
 ---
 
