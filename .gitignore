@@ -1,0 +1,39 @@
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+desktop.ini
+.obsidian/
+.vscode/
+
+# C / C++ Compiled Binaries & Objects
+*.exe
+*.out
+*.o
+*.obj
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+build/
+bin/
+out/
+
+# Python Cache & Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Haskell Build Artifacts
+.stack-work/
+dist/
+dist-newstyle/
+*.hi
+*.chi
+*.chs.h

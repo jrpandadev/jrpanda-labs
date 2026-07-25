@@ -4,7 +4,7 @@ Official workspace for jrpanda.dev
 ## 🚀 Projects
 * **C-Projects**: Low-level programming fundamentals.
 * **CPP**: Object-oriented exploration.
-* **Python**: Automation and logic scripts.
+* **[Python](python/)**: Computer science fundamentals, algorithms, and logic guides.
 * **Haskell**: Exploring functional programming.
 
 ## 🛠️ Tech Stack
