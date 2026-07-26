@@ -1,4 +1,6 @@
-## 💡What is C ?
+# 💻 C Engineering Lab: Core Fundamentals
+
+## 💡 What is C?
 * C is a general-purpose, machine-independent programming language, originally developed for UNIX but equally suited to applications of all kinds -- from operating systems to numerical programs and databases.
 
 * It is a low-level language that works directly with the kinds of primitive objects most computers use-charters, numbers, addresses-and the arithmetic/ logical operations real machines provide.
@@ -7,9 +9,9 @@
 
 * **Variable** : It is the name of the memory location which stores some data.
 * **Expressions** : It is the combination of values, variables, operators, functions.
-* **Keywords** : Reserved words that has special meaning to the compiler.There are 32 keywords in C.
+* **Keywords** : Reserved words that has special meaning to the compiler. There are 32 keywords in C.
 
-|||||||||
+| Reserved | Keywords | In | C | Language | (32 Total) | | |
 |:---|:---|:---|:---|:---|:---|:---|:---|
 |`auto`|`continue`|`double`|`for`|`int`|`signed`|`struct`|`void`|
 |`break`|`do`|`else`|`if`|`long`|`static`|`switch`|`while`|

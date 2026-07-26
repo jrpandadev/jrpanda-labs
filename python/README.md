@@ -6,8 +6,8 @@ A curated collection of structured Python study notes covering core concepts, al
 
 ## 📌 Module Overview
 
-| # | Topic / Study Note | Summary |
-|:-:|:---|:---|
+| Module | Topic / Study Note | Summary |
+| :-: | :--- | :--- |
 | **01** | [1. Introduction to Python](1.%20Introduction%20to%20Python.md) | Declarative vs Imperative knowledge, Dynamic Typing, Built-in Data Types, Type Casting, Operator Precedence |
 | **02** | [2. Strings, Input & Output, and Branching](2.%20Strings,%20InputOutput,%20and%20Branching.md) | String immutability, Slicing & Indexing, User Input, Newton's Method intro, Conditionals, Match-Case |
 | **03** | [3. Iteration](3.%20Iteration.md) | `while` & `for` loops, `range()`, `break`/`continue`, Dream House Savings problem sets |
@@ -18,4 +18,6 @@ A curated collection of structured Python study notes covering core concepts, al
 
 ## 💡 How to Use
 
-Each note is self-contained with code snippets, detailed explanations, and key takeaways. Navigation links (`⬅️ Previous` | `Next ➔`) are included at the bottom of each note for smooth reading on GitHub.
+Each note is self-contained with code snippets, detailed explanations, interactive quizzes, and key takeaways. 
+
+Navigation headers and footers (`⬅️ Previous` \| `🏠 Index` \| `Next ➔`) are included at the top and bottom of each note for smooth reading on GitHub.
