@@ -183,6 +183,16 @@ Default hyperlink color.
 | Lower specificity | Higher specificity |
 | For styling groups | For unique elements + anchors |
 
+### Combining ID and Class
+
+You can (and often will) combine both an `id` and a `class` on the same HTML element:
+
+```html
+<p id="intro" class="highlight bold">This paragraph has both an ID and multiple classes.</p>
+```
+- The `id` provides a unique hook for JavaScript or anchor links.
+- The `class` applies reusable styling.
+
 > [!WARNING]
 > Avoid using IDs purely for styling — their high specificity makes overriding them painful. Prefer classes for CSS and reserve IDs for JavaScript hooks and anchor links.
 
