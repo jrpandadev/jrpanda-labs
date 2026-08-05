@@ -511,6 +511,40 @@ Only "World" can be styled independently without creating a new block.
 
 ---
 
+## 15. `<dialog>` — Native Modal Dialog
+
+```html
+<dialog id="myDialog">
+    <p>This is a dialog box.</p>
+    <button onclick="document.getElementById('myDialog').close()">Close</button>
+</dialog>
+
+<button onclick="document.getElementById('myDialog').showModal()">Open Dialog</button>
+```
+
+### Purpose
+
+Creates a native **modal or non-modal dialog box** — no JavaScript libraries needed.
+
+| Method | Behaviour |
+| :--- | :--- |
+| `.show()` | Opens as a non-modal (background still interactive) |
+| `.showModal()` | Opens as a true modal (background blocked) |
+| `.close()` | Closes the dialog |
+
+### `open` Attribute
+
+```html
+<dialog open>
+    <p>This dialog is open by default.</p>
+</dialog>
+```
+
+> [!TIP]
+> `<dialog>` has built-in accessibility features: it traps keyboard focus inside the modal, supports the `Escape` key to close, and correctly manages ARIA `role="dialog"` automatically.
+
+---
+
 ## 📚 Block vs Inline Elements
 
 Elements in HTML generally fall into two layout categories: **Block** and **Inline**.
@@ -690,6 +724,7 @@ This is a native HTML5 widget. The browser handles the open/close state internal
 | **`<details>/<summary>`** | Native toggle widget — no JavaScript needed |
 | **`<time>`** | Machine-readable dates and durations (ISO-8601) |
 | **`<div>`/`<span>`** | Generic containers — use only when no semantic element fits |
+| **`<dialog>`** | Native modal dialog — use `.showModal()` for accessible modals |
 | **Block vs Inline** | Block = new line + full width; Inline = stays in text flow |
 
 ---

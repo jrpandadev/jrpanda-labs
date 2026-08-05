@@ -288,7 +288,26 @@ Without it, mobile browsers render the page at a desktop width and then shrink i
 
 ---
 
-## 8️⃣ `<title>`
+## 8️⃣ `http-equiv="X-UA-Compatible"`
+
+```html
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+```
+
+### Purpose
+
+Tells **Internet Explorer** to use its latest rendering engine instead of falling back to an older compatibility mode.
+
+| Value | Meaning |
+| :--- | :--- |
+| `IE=edge` | Always use the highest available IE rendering mode |
+
+> [!NOTE]
+> This tag is a **legacy tag** — modern browsers (Chrome, Firefox, Edge, Safari) ignore it entirely. It was only relevant for IE8–IE11. You may still see it in older codebases or generated boilerplates, but it is **not needed** for modern web development.
+
+---
+
+## 9️⃣ `<title>`
 
 ```html
 <title>My First Web Page</title>
@@ -310,7 +329,7 @@ Chrome
 
 ---
 
-## 9️⃣ Favicon
+## 🔟 Favicon
 
 ```html
 <link rel="icon" href="202.jpg" type="image/x-icon">
@@ -334,7 +353,7 @@ A favicon is the small icon displayed beside the page title in the browser tab.
 
 ---
 
-## 🔟 External CSS
+## 1️⃣1️⃣ External CSS
 
 ```html
 <link rel="stylesheet" href="main.css">
@@ -352,7 +371,7 @@ Keeping CSS in a separate file improves maintainability and reuse.
 
 ---
 
-## 1️⃣1️⃣ `<body>`
+## 1️⃣2️⃣ `<body>`
 
 ```html
 <body>
@@ -372,7 +391,7 @@ Examples:
 
 ---
 
-## 1️⃣2️⃣ Heading
+## 1️⃣3️⃣ Heading
 
 ```html
 <h1>Welcome to My First Web Page</h1>
@@ -396,7 +415,7 @@ h1  ← Main heading (one per page)
 
 ---
 
-## 1️⃣3️⃣ Paragraph
+## 1️⃣4️⃣ Paragraph
 
 ```html
 <p>This is a simple web page</p>
@@ -676,6 +695,55 @@ Both store key-value pairs in the browser, but `localStorage` has no expiration 
 
 ---
 
+## 1️⃣5️⃣ `<script>` — JavaScript
+
+```html
+<!-- External script (recommended) -->
+<script src="app.js" defer></script>
+
+<!-- Inline script -->
+<script>
+    console.log('Hello');
+</script>
+```
+
+### Placement
+
+| Position | Behaviour |
+| :--- | :--- |
+| `<head>` without attributes | Blocks HTML parsing — page freezes until script loads |
+| `<head>` with `defer` | Downloads in background, runs after HTML is parsed ✅ |
+| `<head>` with `async` | Downloads in background, runs immediately when ready |
+| End of `<body>` | Old pattern — `defer` is preferred today |
+
+### `defer` vs `async`
+
+| `defer` | `async` |
+| :--- | :--- |
+| Runs after HTML is fully parsed | Runs as soon as downloaded |
+| Scripts run in order | Order not guaranteed |
+| Best for most scripts | Best for independent scripts (analytics) |
+
+> [!TIP]
+> Always use `defer` for scripts that interact with the DOM. Use `async` only for independent analytics or tracking scripts that don't depend on page content.
+
+---
+
+## 1️⃣6️⃣ `<noscript>`
+
+```html
+<noscript>
+    <p>Please enable JavaScript to use this website.</p>
+</noscript>
+```
+
+Displays fallback content when JavaScript is **disabled** or not supported.
+
+> [!NOTE]
+> Use `<noscript>` to provide a meaningful message or alternative experience for users with JavaScript disabled. It is ignored by browsers that support and have JS enabled.
+
+---
+
 ## 🔑 Key Takeaways
 
 | Concept | Key Point |
@@ -686,9 +754,13 @@ Both store key-value pairs in the browser, but `localStorage` has no expiration 
 | **`<body>`** | Contains all visible content |
 | **UTF-8** | Ensures proper character encoding for all languages |
 | **Viewport** | Essential for responsive design on mobile devices |
+| **`X-UA-Compatible`** | Legacy IE tag — forces latest IE engine; not needed in modern browsers |
 | **DOM** | The browser's tree representation of the HTML document |
 | **Web Storage** | `localStorage` persists; `sessionStorage` is per-tab and temporary |
 | **Favicon** | Small icon in the browser tab — use correct MIME types |
+| **`<script defer>`** | Loads JS without blocking HTML parsing — preferred placement |
+| **`<script async>`** | Loads JS independently — use for analytics/tracking only |
+| **`<noscript>`** | Fallback content shown when JavaScript is disabled |
 | **W3C Validation** | Always validate HTML to catch errors early |
 
 ---

@@ -33,7 +33,7 @@
 | **02** | [2. Text Formatting](02-Text-Formatting.md) | Headings, semantic vs visual text, entities, lists, comments | ⭐ |
 | **03** | [3. Semantic HTML](03-Semantic-HTML.md) | The importance of semantics, structural tags (`<main>`, `<article>`, `<section>`), div vs span | ⭐⭐ |
 | **04** | [4. Links & Images](04-Links-Images.md) | Anchors, attributes (`download`, `mailto:`), URLs, `<figure>`, `<picture>`, media | ⭐⭐ |
-| **05** | [5. CSS Basics](05-CSS-Basics.md) | Selectors, pseudo-classes, the Box Model, Specificity | ⭐⭐ |
+| **05** | [5. CSS Basics](05-CSS-Basics.md) | Selectors, pseudo-classes | ⭐⭐ |
 | **06** | [6. Tables](06-Tables.md) | Semantic table structure, `scope`, `rowspan`/`colspan` | ⭐⭐ |
 | **07** | [7. Forms](07-Forms.md) | Form methods (GET/POST), inputs, labels, validation, security | ⭐⭐⭐ |
 | **08** | [8. Best Practices](08-Best-Practices.md) | Accessibility, SEO, Performance, Security, Senior Developer Checklist | ⭐⭐⭐ |

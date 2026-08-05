@@ -9,10 +9,7 @@
 - Understand the **CSS rule structure** — selectors, properties, and values
 - Style basic elements: `html`, `body`, headings, paragraphs, and links
 - Master **CSS pseudo-classes**: `:hover`, `:visited`, `:active`, `:focus`
-- Understand the **CSS cascade** and how styles are applied
-- Learn **CSS specificity** basics and how conflicts are resolved
-- Understand the **CSS Box Model**
-- Practice with **3 interactive quiz questions**
+- Practice with **1 interactive quiz question**
 
 </details>
 
@@ -128,6 +125,69 @@ Default hyperlink color.
 
 ---
 
+## Class Selector
+
+### The `class` Attribute
+
+```html
+<p class="highlight">This paragraph is highlighted.</p>
+<p class="highlight">So is this one.</p>
+```
+
+```css
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+```
+
+- Classes can be **reused** on multiple elements
+- An element can have **multiple classes**: `class="card featured"`
+- CSS class selectors start with a **dot** (`.`)
+
+```html
+<!-- Multiple classes -->
+<div class="card featured large"></div>
+```
+
+> [!TIP]
+> Use class names that describe **what an element is**, not what it looks like. `class="product-card"` is better than `class="red-box"` — if you change the color later, the name still makes sense.
+
+---
+
+## ID Selector
+
+### The `id` Attribute
+
+```html
+<section id="about">About Us</section>
+```
+
+```css
+#about {
+    background-color: #1a1a2e;
+    color: white;
+}
+```
+
+- IDs must be **unique** — only one element per page can have a given ID
+- CSS ID selectors start with a **hash** (`#`)
+- IDs are also used for in-page navigation: `<a href="#about">`
+
+### Class vs ID
+
+| `class` | `id` |
+| :--- | :--- |
+| Reusable on many elements | Unique — one element only |
+| `.classname` in CSS | `#idname` in CSS |
+| Lower specificity | Higher specificity |
+| For styling groups | For unique elements + anchors |
+
+> [!WARNING]
+> Avoid using IDs purely for styling — their high specificity makes overriding them painful. Prefer classes for CSS and reserve IDs for JavaScript hooks and anchor links.
+
+---
+
 ## CSS Pseudo-Classes
 
 Pseudo-classes describe an element's **state**.
@@ -191,195 +251,9 @@ Normal → Hover → Active → Visited
 
 ---
 
-## 📦 CSS Box Model
-
-Every HTML element is rendered as a **box** with four layers:
-
-```text
-┌─────────────────────────────────────┐
-│              MARGIN                 │
-│  ┌───────────────────────────────┐  │
-│  │           BORDER              │  │
-│  │  ┌───────────────────────┐    │  │
-│  │  │       PADDING         │    │  │
-│  │  │  ┌─────────────────┐  │    │  │
-│  │  │  │    CONTENT       │  │    │  │
-│  │  │  └─────────────────┘  │    │  │
-│  │  └───────────────────────┘    │  │
-│  └───────────────────────────────┘  │
-└─────────────────────────────────────┘
-```
-
-| Layer | What it Controls |
-| :--- | :--- |
-| **Content** | The actual text, image, or element |
-| **Padding** | Space between content and border |
-| **Border** | The visible edge of the element |
-| **Margin** | Space between this element and its neighbors |
-
-```css
-div {
-    width: 200px;
-    padding: 20px;
-    border: 2px solid black;
-    margin: 10px;
-}
-/* Total width = 200 + 20*2 + 2*2 + 10*2 = 264px */
-```
-
-> [!TIP]
-> Use `box-sizing: border-box;` to make `width` and `height` include padding and border. This makes sizing much more intuitive:
-> ```css
-> * {
->     box-sizing: border-box;
-> }
-> ```
-
----
-
-## 🏆 CSS Specificity
-
-When multiple rules target the same element, the browser uses **specificity** to decide which wins.
-
-| Selector Type | Specificity | Example |
-| :--- | :--- | :--- |
-| Inline styles | `1-0-0-0` | `style="color: red;"` |
-| ID selectors | `0-1-0-0` | `#header` |
-| Class / pseudo-class | `0-0-1-0` | `.nav`, `:hover` |
-| Element / pseudo-element | `0-0-0-1` | `p`, `::before` |
-
-```text
-Inline > ID > Class > Element
-```
-
-> [!WARNING]
-> Avoid using `!important` to override styles. It breaks the natural cascade and makes debugging extremely difficult. Instead, use more specific selectors.
-
----
-
-## CSS Cascade
-
-The browser applies styles in this order:
-
-```text
-HTML Element → CSS Selector → Apply Matching Rules → Display Styled Element
-```
-
-When multiple rules match, the last one in the stylesheet wins (if specificity is equal).
-
----
-
-## W3C Validator Analysis
-
-> [!NOTE]
-> Validate HTML using the **W3C Markup Validation Service**: [https://validator.w3.org/](https://validator.w3.org/)
-
-### Validation Results
-
-| Check | Status | Notes |
-| :--- | :--- | :--- |
-| `<section>` | ✅ Valid | Semantic grouping used correctly |
-| `<nav>` | ✅ Valid | Proper semantic navigation |
-| Internal Links | ✅ Valid | IDs match navigation links |
-| External Link | ✅ Valid | MDN URL is correctly formed |
-| Lists | ✅ Valid | `<ul>`, `<ol>`, and `<dl>` are used appropriately |
-| CSS Selectors | ✅ Valid | Syntax is correct |
-| Pseudo Classes | ✅ Valid | `:visited`, `:hover`, and `:active` are valid |
-| `href="#"` | ⚠ Acceptable | Works for "Back to Top", but `#top` is more explicit |
-| `<sec>` Element | ❌ Invalid | Not an HTML element — replace with `<section>` or `<div>` |
-| Missing `<body>` Start Tag | ❌ Invalid | Add `<body>` immediately after `</head>` |
-
-### Improvements
-
-#### 1. Add the missing `<body>` tag
-
-```html
-<!-- ❌ Current -->
-</head>
-<section id="html">
-
-<!-- ✅ Correct -->
-</head>
-<body>
-<section id="html">
-```
-
-#### 2. Replace the invalid `<sec>` tag
-
-Replace `<sec>` with `<section>`, `<div>`, or `<p>` as appropriate.
-
-#### 3. Simplify duplicate CSS
-
-```css
-/* ❌ Current — three identical rules */
-p { color: wheat; }
-p { color: wheat; }
-p { color: wheat; }
-
-/* ✅ Better — one rule */
-p { color: wheat; }
-```
-
-#### 4. Add `target="_blank"` with security
-
-```html
-<a href="https://developer.mozilla.org/en-US/" target="_blank" rel="noopener noreferrer">
-    MDN
-</a>
-```
-
----
-
 ## 🧪 Self-Check Questions & Quizzes
 
-### Question 1: Specificity ⭐⭐
-
-Which rule wins when both target the same `<p>` element?
-
-```css
-p { color: red; }
-.intro { color: blue; }
-```
-
-```html
-<p class="intro">Hello</p>
-```
-
-<details>
-<summary><b>💡 Click to Reveal Solution & Explanation</b></summary>
-
-#### ✅ Solution
-```text
-blue
-```
-
-#### 🔍 Explanation
-A **class selector** (`.intro`) has higher specificity (`0-0-1-0`) than an **element selector** (`p`) which has (`0-0-0-1`). So `color: blue` wins.
-</details>
-
----
-
-### Question 2: Box Model ⭐⭐
-
-An element has `width: 200px`, `padding: 20px`, `border: 5px`, and `margin: 10px`. What is the total space it occupies horizontally?
-
-<details>
-<summary><b>💡 Click to Reveal Solution & Explanation</b></summary>
-
-#### ✅ Solution
-```text
-270px
-```
-
-#### 🔍 Explanation
-Total = width + left padding + right padding + left border + right border + left margin + right margin = 200 + 20 + 20 + 5 + 5 + 10 + 10 = **270px**.
-
-With `box-sizing: border-box`, the width (200px) would include padding and border, so total space = 200 + 10 + 10 = 220px.
-</details>
-
----
-
-### Question 3: Pseudo-Class Order ⭐⭐⭐
+### Question 1: Pseudo-Class Order ⭐⭐⭐
 
 Why does writing `:hover` before `:visited` in your CSS cause problems?
 
@@ -402,11 +276,9 @@ CSS rules with equal specificity are resolved by **source order** — the last o
 | **CSS** | Controls presentation — keep it separate from HTML |
 | **External CSS** | Best practice — cacheable, reusable across pages |
 | **Selectors** | Target elements by name, class, ID, or state |
+| **Class (`.name`)** | Reusable — apply to multiple elements |
+| **ID (`#name`)** | Unique — one per page; higher specificity |
 | **Pseudo-classes** | `:hover`, `:visited`, `:active`, `:focus` — describe states |
-| **Specificity** | Inline > ID > Class > Element — determines which rule wins |
-| **Box Model** | Content + Padding + Border + Margin = total space |
-| **`box-sizing: border-box`** | Makes width/height include padding and border |
-| **Cascade** | Last rule wins when specificity is equal |
 | **LoVe HAte** | Correct pseudo-class order: `:link`, `:visited`, `:hover`, `:active` |
 
 ---

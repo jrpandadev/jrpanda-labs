@@ -415,6 +415,128 @@ These semantic elements improve accessibility for screen readers and assistive t
 
 ---
 
+## 11. `<small>` — Small Print
+
+```html
+<small>This is some smaller text.</small>
+```
+
+### Purpose
+
+Renders text in a **smaller font size**. Used for fine print, disclaimers, copyright notices, and side comments.
+
+> [!NOTE]
+> `<small>` is semantic in HTML5 — it represents **side comments and fine print**, not just visual downsizing. Use CSS `font-size` if you only want smaller text for styling purposes.
+
+---
+
+## 12. `<del>` & `<ins>` — Deleted and Inserted Text
+
+```html
+<p>My favorite color is <del>blue</del> <ins>red</ins>.</p>
+```
+
+| Element | Appearance | Meaning |
+| :--- | :--- | :--- |
+| `<del>` | strikethrough | Text that has been **removed** |
+| `<ins>` | underlined | Text that has been **inserted/added** |
+
+### Use Cases
+
+- Document revisions
+- Price changes (~~$50~~ → $30)
+- Corrections
+
+> [!TIP]
+> Both accept a `cite` attribute (URL explaining the change) and a `datetime` attribute (when the change occurred), useful for document revision tracking.
+
+---
+
+## 13. `<sub>` & `<sup>` — Subscript and Superscript
+
+```html
+<p>This is <sub>subscripted</sub> text.</p>
+<p>This is <sup>superscripted</sup> text.</p>
+```
+
+| Element | Position | Common Use |
+| :--- | :--- | :--- |
+| `<sub>` | Below the baseline | Chemical formulas: H₂O, CO₂ |
+| `<sup>` | Above the baseline | Footnotes¹, exponents: x² |
+
+```html
+<p>Water is H<sub>2</sub>O</p>
+<p>Area = πr<sup>2</sup></p>
+```
+
+---
+
+## 14. `<blockquote>` & `<q>` — Quotations
+
+### `<blockquote>` — Block Quotation
+
+```html
+<blockquote cite="http://www.worldwildlife.org/who/index.html">
+  For 50 years, WWF has been protecting the future of nature.
+</blockquote>
+```
+
+Used for **long quotations** from external sources. Browsers typically indent it.
+
+### `<q>` — Inline Quotation
+
+```html
+<p>WWF's goal is to: <q>Build a future where people live in harmony with nature.</q></p>
+```
+
+Used for **short, inline quotations**. Browsers automatically add quotation marks.
+
+### `<blockquote>` vs `<q>`
+
+| `<blockquote>` | `<q>` |
+| :--- | :--- |
+| Long quotes | Short inline quotes |
+| Block-level (new line) | Inline (within a sentence) |
+| Browser indents it | Browser adds `" "` marks |
+
+> [!TIP]
+> Always include the `cite` attribute with a URL for attribution. While browsers don't display it visually, it is meaningful for screen readers and SEO crawlers.
+
+---
+
+## 15. `<cite>` — Citation
+
+```html
+<p><cite>The Scream</cite> by Edvard Munch. Painted in 1893.</p>
+```
+
+Marks the **title of a creative work** — books, paintings, films, songs, articles.
+
+Browsers render it in italics by default.
+
+> [!IMPORTANT]
+> `<cite>` is for the **title of a work**, not the author's name. Do not confuse it with the `cite` *attribute* used on `<blockquote>` — that attribute takes a URL, not a title.
+
+---
+
+## 16. `<bdo>` — Bidirectional Override
+
+```html
+<bdo dir="rtl">This text will be written from right to left</bdo>
+```
+
+Overrides the default text direction.
+
+| `dir` value | Direction |
+| :--- | :--- |
+| `rtl` | Right-to-left (Arabic, Hebrew) |
+| `ltr` | Left-to-right (default) |
+
+> [!NOTE]
+> `<bdo>` is most useful when mixing left-to-right and right-to-left scripts in the same document.
+
+---
+
 ## 📝 Lists
 
 ### Unordered List — `<ul>`
@@ -544,6 +666,48 @@ quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequa
 
 ---
 
+## 17. `<kbd>`, `<samp>`, `<var>` — Technical Inline Elements
+
+### `<kbd>` — Keyboard Input
+
+```html
+<p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy.</p>
+```
+
+Represents **keyboard keys or user input**. Browsers display it in a monospace font.
+
+Common uses: Keyboard shortcuts, terminal commands, hotkeys.
+
+### `<samp>` — Sample Output
+
+```html
+<p>The terminal displayed: <samp>Hello, World!</samp></p>
+```
+
+Represents **output from a program or system**. Also displayed in monospace.
+
+### `<var>` — Variable
+
+```html
+<p>The area of a circle is <var>A</var> = π<var>r</var><sup>2</sup>.</p>
+```
+
+Represents a **mathematical variable or programming variable**. Rendered in italics by default.
+
+### Comparison
+
+| Element | Purpose | Renders as |
+| :--- | :--- | :--- |
+| `<kbd>` | Keyboard input / user action | Monospace |
+| `<samp>` | Program/system output | Monospace |
+| `<code>` | Code snippet | Monospace |
+| `<var>` | Math / programming variable | Italic |
+
+> [!NOTE]
+> All four elements look similar visually but carry different semantic meaning. Use them correctly so screen readers and automated tools understand the intent.
+
+---
+
 ## 🧪 Self-Check Questions & Quizzes
 
 ### Question 1: Semantic vs Visual ⭐
@@ -607,11 +771,21 @@ When you need to display **term-definition pairs** such as glossaries, FAQs, or 
 | **Headings** | `<h1>`–`<h6>` define document outline — never skip levels |
 | **`<em>` vs `<i>`** | `<em>` = emphasis (semantic), `<i>` = italic (visual only) |
 | **`<strong>` vs `<b>`** | `<strong>` = importance (semantic), `<b>` = bold (visual only) |
+| **`<small>`** | Fine print and side comments — not just visual resizing |
+| **`<del>` / `<ins>`** | Mark removed / inserted text — useful for revisions and corrections |
+| **`<sub>` / `<sup>`** | Subscript (H₂O) / Superscript (x²) — chemistry, math, footnotes |
+| **`<blockquote>`** | Long block quotes from external sources — use `cite` attribute |
+| **`<q>`** | Short inline quotes — browser adds `" "` automatically |
+| **`<cite>`** | Title of a creative work — not the author's name |
+| **`<bdo>`** | Overrides text direction — `dir="rtl"` for right-to-left |
 | **`<abbr>`** | Marks abbreviations — always include the `title` attribute |
 | **`<address>`** | For contact information only — not arbitrary addresses |
 | **`<br>`** | Line break for poems/addresses — not for layout spacing |
 | **Entities** | Use `&lt;`, `&gt;`, `&amp;` for reserved characters |
 | **Comments** | Developer notes — invisible to users but visible in source |
+| **`<kbd>`** | Keyboard keys / user input — displayed in monospace |
+| **`<samp>`** | Program or system output — displayed in monospace |
+| **`<var>`** | Math or programming variable — rendered in italic |
 | **Lists** | `<ul>` (bullets), `<ol>` (numbers), `<dl>` (term-definition) |
 
 ---

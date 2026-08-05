@@ -229,6 +229,9 @@ Allow keyboard users to skip navigation and jump to main content:
 <main id="main-content">
 ```
 
+> [!NOTE]
+> The CSS below uses advanced layout properties (`position`, `z-index`) which are outside the scope of HTML basics. You will learn these in a dedicated CSS course, but they are included here because Skip Links require CSS to visually hide and show the link.
+
 ```css
 .skip-link {
     position: absolute;

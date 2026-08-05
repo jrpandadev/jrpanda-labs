@@ -216,6 +216,73 @@ Opens a color picker.
 
 Displays a slider control.
 
+### Month Input
+
+```html
+<input type="month">
+```
+
+Allows the user to select a **month and year** (no day). Displays a native month picker in supported browsers.
+
+### Time Input
+
+```html
+<input type="time">
+```
+
+Allows the user to select a **time** (hours and minutes). Displays a native time picker in supported browsers.
+
+### Number Input
+
+```html
+<input type="number" min="1" max="100" step="1">
+```
+
+Accepts only numeric values. Attributes:
+
+| Attribute | Purpose |
+| :--- | :--- |
+| `min` | Minimum value |
+| `max` | Maximum value |
+| `step` | Increment amount (e.g., `step="5"` allows 0, 5, 10…) |
+
+### Date Input
+
+```html
+<input type="date">
+```
+
+Provides a native date picker (year, month, day).
+
+### Search Input
+
+```html
+<input type="search" placeholder="Search...">
+```
+
+Semantically indicates a search field. Some browsers add a clear (`×`) button automatically.
+
+### File Input
+
+```html
+<input type="file" accept=".jpg,.png,.pdf">
+```
+
+Opens a file picker dialog. The `accept` attribute restricts which file types are shown.
+
+```html
+<!-- Allow multiple files -->
+<input type="file" multiple>
+```
+
+### Hidden Input
+
+```html
+<input type="hidden" name="csrf_token" value="abc123">
+```
+
+Invisible to the user. Used to pass data with the form that the user should not see or edit (e.g., CSRF tokens, user IDs).
+
 ---
 
 ## Radio Buttons
@@ -269,6 +336,22 @@ Select Pets
 
 ## Input Attributes
 
+### `name`
+
+```html
+<input type="text" name="username" id="username">
+```
+
+The **most critical form attribute**. When a form is submitted, the browser sends data as `name=value` pairs.
+
+```text
+POST /login
+username=jyoti&password=secret
+```
+
+> [!IMPORTANT]
+> Without a `name` attribute, the input's value is **not sent** to the server when the form is submitted. Always include `name` on every form control you want to collect.
+
 ### `placeholder`
 
 ```html
@@ -287,6 +370,17 @@ Displays temporary hint text. Disappears when user starts typing.
 ```
 
 Makes the field mandatory. Form won't submit without a value.
+
+### `novalidate` (on `<form>`)
+
+```html
+<form novalidate>
+```
+
+Disables **all** browser-native validation for the form. Useful when you handle validation entirely in JavaScript.
+
+> [!NOTE]
+> `novalidate` is added to the `<form>` element, not individual inputs. It turns off HTML5 built-in validation globally for that form.
 
 ### `autocomplete`
 
@@ -547,7 +641,9 @@ HTML attributes like `required`, `pattern`, and `type="email"` improve user expe
 | **GET vs POST** | GET = URL-visible, limited size; POST = body, larger, more secure |
 | **`<fieldset>`** | Groups related controls — use with `<legend>` for a title |
 | **`<label>`** | Essential for accessibility — `for` must match input's `id` |
-| **Input Types** | `text`, `email`, `tel`, `password`, `number`, `date`, `color`, `range` |
+| **Input Types** | `text`, `email`, `tel`, `password`, `number`, `date`, `color`, `range`, `month`, `time`, `search`, `file`, `hidden` |
+| **`name` attribute** | Required for form submission — data sent as `name=value` pairs |
+| **`novalidate`** | Disables browser validation on the entire form |
 | **Radio vs Checkbox** | Radio = one choice (shared name); Checkbox = multiple choices |
 | **Validation** | `required`, `pattern`, `min/max`, `minlength/maxlength` |
 | **`<textarea>`** | Multi-line input — for messages and feedback |
