@@ -20,12 +20,13 @@
 3. **Attempt quizzes first** — don't peek at solutions until you've tried.
 4. **Use the navigation links** — headers and footers link between modules.
 
-### Difficulty Indicators (in Quizzes)
-| Icon | Level | Description |
+### Question Tags (in Quizzes)
+| Tag | Focus | Description |
 | :---: | :--- | :--- |
-| ⭐ | **Easy** | Straightforward recall |
-| ⭐⭐ | **Medium** | Requires understanding of concepts |
-| ⭐⭐⭐ | **Hard** | Tricky edge cases or deep reasoning |
+| 🐛 **(Debugging)** | Error Fixing | Identifying and fixing syntax or logic bugs |
+| 💼 **(Interview)** | Professional | Classic interview traps and Pythonic idioms |
+| 🔥 **(Tricky)** | Edge Cases | Counterintuitive behavior and unexpected results |
+| 🧠 **(HOTS)** | Deep Reasoning | Higher-Order Thinking Skills requiring deep conceptual mastery |
 
 </details>
 
