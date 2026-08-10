@@ -41,6 +41,9 @@
 | **04** | [4. Approximation & Bisection Search](4.%20Approximation%20%26%20Bisection%20Search.md) | Floating-point precision, Exhaustive Approximation, Bisection Search ($O(\log_2 N)$), Newton-Raphson method |
 | **05** | [5. Decomposition, Abstraction, and Functions](5.%20Decomposition,%20Abstraction,%20and%20Functions.md) | Modularity, Functions & Higher-Order Functions, Lambda, Return vs Print, Hangman Game, Modules & `__name__` |
 | **06** | [6. Tuples](6.%20Tuples.md) | Tuple Creation, Indexing & Slicing, Immutability, Tuple Unpacking, `*args`, Returning Multiple Values |
+| **07** | [7. Lists](7.%20Lists.md) | List Creation, Mutability, `split` & `join`, Aliasing vs Cloning, List Comprehensions, Shopping Cart Manager |
+| **08** | [8. Testing & Debugging](8.%20Testing%20%26%20Debugging.md) | Black/Glass Box Testing, Exceptions `try...except`, `assert`, Bisection Debugging |
+| **09** | [9. Dictionaries](9.%20Dictionaries.md) | Key-Value pairs, Mutability, Hashable keys, `.get()`, Word Frequency Counter |
 
 ---
 
@@ -74,6 +77,21 @@
            ▼
   ┌─────────────────────┐
   │  06. Tuples          │
+  │                      │
+  └────────┬────────────┘
+           ▼
+  ┌─────────────────────┐
+  │  07. Lists           │
+  │                      │
+  └────────┬────────────┘
+           ▼
+  ┌─────────────────────┐
+  │  08. Testing &       │
+  │  Debugging           │
+  └────────┬────────────┘
+           ▼
+  ┌─────────────────────┐
+  │  09. Dictionaries    │
   │                      │
   └─────────────────────┘
 ```
