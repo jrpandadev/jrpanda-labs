@@ -36,15 +36,15 @@
 
 | Module | Topic / Study Note | Summary |
 | :-: | :--- | :--- |
-| **01** | [1. Introduction to Python](1.%20Introduction%20to%20Python.md) | Declarative vs Imperative knowledge, Dynamic Typing, Built-in Data Types, Type Casting, Operator Precedence |
-| **02** | [2. Strings, Input & Output, and Branching](2.%20Strings,%20InputOutput,%20and%20Branching.md) | String immutability, Slicing & Indexing, User Input, Newton's Method intro, Conditionals, Match-Case |
-| **03** | [3. Iteration](3.%20Iteration.md) | `while` & `for` loops, `range()`, `break`/`continue`, Dream House Savings problem sets |
+| **01** | [1. Introduction to Python](1.%20Introduction%20to%20Python.md) | Dynamic Typing, Data Types, Type Casting, Augmented & Multiple Assignment, Identifier Rules, Operator Precedence, Short-Circuit Evaluation |
+| **02** | [2. Strings, Input & Output, and Branching](2.%20Strings,%20InputOutput,%20and%20Branching.md) | String Immutability, Slicing, String Methods (`.isdigit`, `.startswith`, etc.), User Input, Chained Comparisons, Conditionals, Ternary, `match-case` |
+| **03** | [3. Iteration](3.%20Iteration.md) | `while` & `for` loops, `range()` with negative step, `break`/`continue`, Nested Loops, `for...else`, Dream House Savings |
 | **04** | [4. Approximation & Bisection Search](4.%20Approximation%20%26%20Bisection%20Search.md) | Floating-point precision, Exhaustive Approximation, Bisection Search ($O(\log_2 N)$), Newton-Raphson method |
-| **05** | [5. Decomposition, Abstraction, and Functions](5.%20Decomposition,%20Abstraction,%20and%20Functions.md) | Modularity, Functions & Higher-Order Functions, Lambda, Return vs Print, Hangman Game, Modules & `__name__` |
-| **06** | [6. Tuples](6.%20Tuples.md) | Tuple Creation, Indexing & Slicing, Immutability, Tuple Unpacking, `*args`, Returning Multiple Values |
-| **07** | [7. Lists](7.%20Lists.md) | List Creation, Mutability, `split` & `join`, Aliasing vs Cloning, List Comprehensions, Shopping Cart Manager |
-| **08** | [8. Testing & Debugging](8.%20Testing%20%26%20Debugging.md) | Black/Glass Box Testing, Exceptions `try...except`, `assert`, Bisection Debugging |
-| **09** | [9. Dictionaries](9.%20Dictionaries.md) | Key-Value pairs, Mutability, Hashable keys, `.get()`, Word Frequency Counter |
+| **05** | [5. Decomposition, Abstraction, and Functions](5.%20Decomposition,%20Abstraction,%20and%20Functions.md) | Functions, Scope, `nonlocal`, Recursion, Higher-Order Functions, Lambda, Modules & `__name__`, Hangman Game |
+| **06** | [6. Tuples](6.%20Tuples.md) | Immutability, Packing/Unpacking, Extended Unpacking with `*`, `zip()`, Swapping, Multiple Returns, `*args` |
+| **07** | [7. Lists](7.%20Lists.md) | Mutability, `sorted()` vs `.sort()`, Nested Lists, `any()`/`all()`, `map()`/`filter()`, Aliasing, List Comprehensions, Shopping Cart |
+| **08** | [8. Testing & Debugging](8.%20Testing%20%26%20Debugging.md) | Black/Glass Box Testing, Exceptions, `try...except`, `raise`, `assert`, Bisection Debugging |
+| **09** | [9. Dictionaries](9.%20Dictionaries.md) | Key-Value pairs, `.get()`, `.update()`, Dict Merging, Nested Dicts, Dict Comprehensions, `**kwargs`, Word Frequency Counter |
 
 ---
 
