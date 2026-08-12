@@ -44,7 +44,7 @@
 | **06** | [6. Tuples](6.%20Tuples.md) | Immutability, Packing/Unpacking, Extended Unpacking with `*`, `zip()`, Swapping, Multiple Returns, `*args` |
 | **07** | [7. Lists](7.%20Lists.md) | Mutability, `sorted()` vs `.sort()`, Nested Lists, `any()`/`all()`, `map()`/`filter()`, Aliasing, List Comprehensions, Shopping Cart |
 | **08** | [8. Testing & Debugging](8.%20Testing%20%26%20Debugging.md) | Black/Glass Box Testing, Exceptions, `try...except`, `raise`, `assert`, Bisection Debugging |
-| **09** | [9. Dictionaries](9.%20Dictionaries.md) | Key-Value pairs, `.get()`, `.update()`, Dict Merging, Nested Dicts, Dict Comprehensions, `**kwargs`, Word Frequency Counter |
+| **09** | [9. Dictionaries & Sets](9.%20Dictionaries%20&%20Sets.md) | Key-Value pairs, `.get()`, `.update()`, Dict Merging, Nested Dicts, Dict Comprehensions, `**kwargs`, Word Frequency Counter, Sets |
 
 ---
 
