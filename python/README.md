@@ -24,7 +24,7 @@
 | Tag | Focus | Description |
 | :---: | :--- | :--- |
 | 🐛 **(Debugging)** | Error Fixing | Identifying and fixing syntax or logic bugs |
-| 💼 **(Interview)** | Professional | Classic interview traps and Pythonic idioms |
+| 💼 **(Advanced)** | Professional | Classic advanced traps and Pythonic idioms |
 | 🔥 **(Tricky)** | Edge Cases | Counterintuitive behavior and unexpected results |
 | 🧠 **(HOTS)** | Deep Reasoning | Higher-Order Thinking Skills requiring deep conceptual mastery |
 
@@ -39,7 +39,7 @@
 | **01** | [1. Introduction to Python](1.%20Introduction%20to%20Python.md) | Dynamic Typing, Data Types, Type Casting, Augmented & Multiple Assignment, Identifier Rules, Operator Precedence, Short-Circuit Evaluation |
 | **02** | [2. Strings, Input & Output, and Branching](2.%20Strings,%20InputOutput,%20and%20Branching.md) | String Immutability, Slicing, String Methods (`.isdigit`, `.startswith`, etc.), User Input, Chained Comparisons, Conditionals, Ternary, `match-case` |
 | **03** | [3. Iteration](3.%20Iteration.md) | `while` & `for` loops, `range()` with negative step, `break`/`continue`, Nested Loops, `for...else`, Dream House Savings |
-| **04** | [4. Approximation & Bisection Search](4.%20Approximation%20%26%20Bisection%20Search.md) | Floating-point precision, Exhaustive Approximation, Bisection Search ($O(\log_2 N)$), Newton-Raphson method |
+| **04** | [4. Approximation & Bisection Search](4.%20Approximation%20%26%20Bisection%20Search.md) | Floating-point precision, Exhaustive Approximation, Bisection Search (`O(log N)`), Newton-Raphson method |
 | **05** | [5. Decomposition, Abstraction, and Functions](5.%20Decomposition,%20Abstraction,%20and%20Functions.md) | Functions, Scope, `nonlocal`, Recursion, Higher-Order Functions, Lambda, Modules & `__name__`, Hangman Game |
 | **06** | [6. Tuples](6.%20Tuples.md) | Immutability, Packing/Unpacking, Extended Unpacking with `*`, `zip()`, Swapping, Multiple Returns, `*args` |
 | **07** | [7. Lists](7.%20Lists.md) | Mutability, `sorted()` vs `.sort()`, Nested Lists, `any()`/`all()`, `map()`/`filter()`, Aliasing, List Comprehensions, Shopping Cart |
