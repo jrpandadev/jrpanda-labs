@@ -45,6 +45,7 @@
 | **07** | [7. Lists](7.%20Lists.md) | Mutability, `sorted()` vs `.sort()`, Nested Lists, `any()`/`all()`, `map()`/`filter()`, Aliasing, List Comprehensions, Shopping Cart |
 | **08** | [8. Testing & Debugging](8.%20Testing%20%26%20Debugging.md) | Black/Glass Box Testing, Exceptions, `try...except`, `raise`, `assert`, Bisection Debugging |
 | **09** | [9. Dictionaries & Sets](9.%20Dictionaries%20&%20Sets.md) | Key-Value pairs, `.get()`, `.update()`, Dict Merging, Nested Dicts, Dict Comprehensions, `**kwargs`, Word Frequency Counter, Sets |
+| **10** | [10. Recursion](10.%20Recursion.md) | Base cases, Recursive steps, Call Stack & Scope, Fibonacci, Iteration vs Recursion |
 
 ---
 
@@ -94,6 +95,11 @@
   ┌─────────────────────┐
   │  09. Dictionaries    │
   │  & Sets              │
+  └────────┬────────────┘
+           ▼
+  ┌─────────────────────┐
+  │  10. Recursion       │
+  │                      │
   └─────────────────────┘
 ```
 
