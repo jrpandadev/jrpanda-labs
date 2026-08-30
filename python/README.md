@@ -49,6 +49,7 @@
 | **08** | [8. Testing & Debugging](08.%20Testing%20%26%20Debugging.md)                                             | Black/Glass Box Testing, Exceptions, `try...except`, `raise`, `assert`, Bisection Debugging                                                          |
 | **09** | [9. Dictionaries & Sets](09.%20Dictionaries%20&%20Sets.md)                                               | Key-Value pairs, `.get()`, `.update()`, Dict Merging, Nested Dicts, Dict Comprehensions, `**kwargs`, Word Frequency Counter, Sets                    |
 | **10** | [10. Recursion](10.%20Recursion.md)                                                                      | Base cases, Recursive steps, Call Stack & Scope, Fibonacci, Iteration vs Recursion                                                                   |
+| **11** | [11. Classes & Inheritance](11.%20Classes%20%26%20Inheritance.md)                                       | Objects, OOP, `class` keyword, `__init__`, `self`, Dot Notation, Dunder Methods (`__str__`, `__mul__`), Inheritance, `super()`, Method Overriding      |
 
 ---
 
@@ -103,6 +104,11 @@
   ┌─────────────────────┐
   │  10. Recursion      │
   │                     │
+  └────────┬────────────┘
+           ▼
+  ┌─────────────────────┐
+  │  11. Classes &      │
+  │  Inheritance        │
   └─────────────────────┘
 ```
 
